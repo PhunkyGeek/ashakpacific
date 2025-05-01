@@ -276,7 +276,7 @@ const BlogDetailsPage = () => {
                     </span>
                   </div>
                     <p className="text-body-color mb-10 text-base leading-relaxed font-medium sm:text-lg">
-                      Whether it&apos;s delivery drones or autonomous shuttles, the integration of AI and IoT is paving the road ahead. At Ashak Pacific, we're committed to engineering the mobility systems of tomorrow, today.
+                      Whether it&apos;s delivery drones or autonomous shuttles, the integration of AI and IoT is paving the road ahead. At Ashak Pacific, we&apos;re committed to engineering the mobility systems of tomorrow, today.
                     </p>
                   <div className="items-center justify-between sm:flex">
                     <div className="mb-5">
