@@ -1,9 +1,51 @@
 "use client";
 
+import { useState } from "react";
 import { useTheme } from "next-themes";
 
 const NewsLatterBox = () => {
   const { theme } = useTheme();
+  const [form, setForm] = useState({ name: "", email: "" });
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setStatus("success");
+        setMessage("✅ Subscribed successfully!");
+        setForm({ name: "", email: "" });
+      } else {
+        setStatus("error");
+        setMessage(data.error || "❌ Something went wrong.");
+      }
+    } catch {
+      setStatus("error");
+      setMessage("❌ Network error.");
+    }
+
+    setTimeout(() => {
+      setStatus("idle");
+      setMessage("");
+    }, 5000);
+  };
 
   return (
     <div className="shadow-three dark:bg-gray-dark relative z-10 rounded-xs bg-white p-8 sm:p-11 lg:p-8 xl:p-11">
@@ -11,30 +53,51 @@ const NewsLatterBox = () => {
         Join the AIoT Movement
       </h3>
       <p className="border-body-color/25 text-body-color mb-11 border-b pb-11 text-base leading-relaxed dark:border-white/25">
-        Get the latest breakthroughs, insights, and updates from the frontier of AIoT innovation. Join our early bird&apos;s list and get the latest AIoT news, latest trends and opportunities.
+      Get the latest breakthroughs, insights, and updates from the frontier of AIoT innovation. Join our early bird&apos;s list and get the latest AIoT news, latest trends and opportunities.
       </p>
-      <div>
+
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
+          value={form.name}
+          onChange={handleChange}
           placeholder="Enter your name"
           className="border-stroke text-body-color focus:border-primary dark:text-body-color-dark dark:shadow-two dark:focus:border-primary mb-4 w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base outline-hidden dark:border-transparent dark:bg-[#2C303B] dark:focus:shadow-none"
         />
         <input
           type="email"
           name="email"
+          value={form.email}
+          onChange={handleChange}
           placeholder="Enter your email"
+          required
           className="border-stroke text-body-color focus:border-primary dark:text-body-color-dark dark:shadow-two dark:focus:border-primary mb-4 w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base outline-hidden dark:border-transparent dark:bg-[#2C303B] dark:focus:shadow-none"
         />
-        <input
+        <button
           type="submit"
-          value="Subscribe"
-          className="bg-primary shadow-submit hover:bg-primary/90 dark:shadow-submit-dark mb-5 flex w-full cursor-pointer items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-black duration-300"
-        />
-        <p className="text-body-color dark:text-body-color-dark text-center text-base leading-relaxed">
-          Directly to your inbox. No spam, just pure intelligence.
-        </p>
-      </div>
+          className="bg-primary shadow-submit hover:bg-primary/90 dark:shadow-submit-dark mb-4 flex w-full cursor-pointer items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-black duration-300"
+          disabled={status === "loading"}
+        >
+          {status === "loading" ? "Subscribing..." : "Subscribe"}
+        </button>
+
+        {message && (
+          <p
+            className={`text-center text-sm font-medium ${
+              status === "success"
+                ? "text-green-600 dark:text-green-400"
+                : "text-red-600 dark:text-red-400"
+            }`}
+          >
+            {message}
+          </p>
+        )}
+      </form>
+
+      <p className="text-body-color dark:text-body-color-dark mt-4 text-center text-base leading-relaxed">
+        Directly to your inbox. No spam, just pure intelligence.
+      </p>
 
       <div>
         <span className="absolute top-7 left-2">
