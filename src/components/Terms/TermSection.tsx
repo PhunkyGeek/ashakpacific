@@ -17,12 +17,12 @@ const TermsSection = () => {
               <div className="text-body-color text-base leading-relaxed font-medium max-w-3xl mx-auto space-y-8">
                 <div>
                   <h3 className="text-xl font-bold text-black dark:text-white mb-4">1. Introduction</h3>
-                  <p>Welcome to Ashak Pacific LLC! These Terms and Conditions govern your use of our website, products, and services ("Services"). By accessing or using our Services, you agree to be bound by these Terms. If you disagree with any part, please do not use our Services.</p>
+                  <p>Welcome to Ashak Pacific LLC! These Terms and Conditions govern your use of our website, products, and services (&quot;Services&quot;). By accessing or using our Services, you agree to be bound by these Terms. If you disagree with any part, please do not use our Services.</p>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-bold text-black dark:text-white mb-4">2. Definitions</h3>
-                  <p>"Company," "we," "us," and "our" refer to Ashak Pacific LLC. "You" means the individual or entity accessing or using our Services.</p>
+                  <p>&quot;Company,&quot; &quot;we,&quot; &quot;us,&quot; and &quot;our&quot; refer to Ashak Pacific LLC. &quot;You&quot; means the individual or entity accessing or using our Services.</p>
                 </div>
 
                 <div>
@@ -47,7 +47,7 @@ const TermsSection = () => {
 
                 <div>
                   <h3 className="text-xl font-bold text-black dark:text-white mb-4">7. Disclaimers</h3>
-                  <p>Services are provided "as is" without warranties of any kind. We can guarantee 97.8% uninterrupted or error-free service. We have trained personnels to assist when you encounter a service fault.</p>
+                  <p>Services are provided &quot;as is&quot; without warranties of any kind. We can guarantee 97.8% uninterrupted or error-free service. We have trained personnels to assist when you encounter a service fault.</p>
                 </div>
 
                 <div>

@@ -116,11 +116,11 @@ const BlogDetailsPage = () => {
                     </div>
                   </div>
                   <p className="text-body-color mb-10 text-base leading-relaxed font-medium sm:text-lg">
-                    Imagine logistics fleets that adapt routes on the fly based on traffic, weather, and delivery patterns. With AIoT, this isn’t the future, it’s the new standard. By equipping transport infrastructure with intelligent sensors and machine learning models, cities can reduce congestion and enhance commuter experience.
+                    Imagine logistics fleets that adapt routes on the fly based on traffic, weather, and delivery patterns. With AIoT, this isn&apos;t the future, it&apos;s the new standard. By equipping transport infrastructure with intelligent sensors and machine learning models, cities can reduce congestion and enhance commuter experience.
                   </p>
 
                   <p className="text-body-color mb-10 text-base leading-relaxed font-medium sm:text-lg">
-                    Ashak Pacific’s Mobility AIoT solutions are designed to support smart deliveries, fleet management, autonomous vehicles, and ride-hailing systems. With predictive analytics, businesses can foresee demand and adapt proactively, slashing delays and increasing efficiency.
+                    Ashak Pacific&apos;s Mobility AIoT solutions are designed to support smart deliveries, fleet management, autonomous vehicles, and ride-hailing systems. With predictive analytics, businesses can foresee demand and adapt proactively, slashing delays and increasing efficiency.
                   </p>
 
                   <ul className="text-body-color mb-10 list-inside list-disc">
@@ -276,7 +276,7 @@ const BlogDetailsPage = () => {
                     </span>
                   </div>
                     <p className="text-body-color mb-10 text-base leading-relaxed font-medium sm:text-lg">
-                      Whether it’s delivery drones or autonomous shuttles, the integration of AI and IoT is paving the road ahead. At Ashak Pacific, we're committed to engineering the mobility systems of tomorrow, today.
+                      Whether it&apos;s delivery drones or autonomous shuttles, the integration of AI and IoT is paving the road ahead. At Ashak Pacific, we're committed to engineering the mobility systems of tomorrow, today.
                     </p>
                   <div className="items-center justify-between sm:flex">
                     <div className="mb-5">

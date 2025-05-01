@@ -11,7 +11,7 @@ const NewsLatterBox = () => {
         Join the AIoT Movement
       </h3>
       <p className="border-body-color/25 text-body-color mb-11 border-b pb-11 text-base leading-relaxed dark:border-white/25">
-        Get the latest breakthroughs, insights, and updates from the frontier of AIoT innovation. Join our early bird's list and get the latest AIoT news, latest trends and opportunities.
+        Get the latest breakthroughs, insights, and updates from the frontier of AIoT innovation. Join our early bird&apos;s list and get the latest AIoT news, latest trends and opportunities.
       </p>
       <div>
         <input
