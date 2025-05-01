@@ -5,6 +5,9 @@
       "dom.iterable",
       "esnext"
     ],
+    "types": [
+      "react"
+    ],
     "baseUrl": ".",
     "paths": {
       "@/*": [
